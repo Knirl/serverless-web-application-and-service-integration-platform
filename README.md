@@ -5,11 +5,6 @@ project demonstrates REST API development, persistent storage, external
 API integration, asynchronous event processing, basic monitoring, and
 static frontend hosting.
 
-> **Status:** The core application, external API integration,
-> asynchronous workflow, foundational security/observability, and
-> frontend hosting have been implemented and tested. Terraform migration
-> and final end-to-end documentation are in progress.
-
 ## Contents
 
 -   [Overview](#overview)
@@ -221,22 +216,7 @@ The project notes record these successful tests:
 These tests cover the documented flows; they are not exhaustive load,
 resilience, security, or production-readiness tests.
 
-## Known Limitations
 
--   The `PUT /requests/{id}` handler can overwrite omitted fields with
-    empty strings or defaults. Partial updates should preserve fields
-    that are not supplied.
--   A request can be saved to DynamoDB while EventBridge publishing
-    fails. The current behavior logs the publishing error but may still
-    return a successful creation response, so an event may be missed.
--   CloudWatch alarm notification actions are not configured.
--   IAM policies and trust relationships need a more complete review.
--   The deployed external API URL should be verified after temporary
-    failure tests.
--   The exact SQS processing queue name must be confirmed before
-    Terraform import.
--   Terraform reconciliation and final end-to-end verification remain in
-    progress.
 
 ## Terraform Migration
 
