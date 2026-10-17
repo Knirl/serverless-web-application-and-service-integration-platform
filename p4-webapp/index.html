@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Request Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Service Desk</h1>
+  <button id="createBtn" class="btn primary">Create request</button>
+</header>
+<main>
+  <section id="stats" class="stats" aria-label="Summary"></section>
+  <section class="filters" aria-label="Search and filters">
+    <input id="search" type="search" placeholder="Search title or description" aria-label="Search requests">
+    <select id="fStatus" aria-label="Status"><option value="">All statuses</option></select>
+    <select id="fCategory" aria-label="Category"><option value="">All categories</option></select>
+    <select id="fPriority" aria-label="Priority"><option value="">All priorities</option></select>
+  </section>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ID</th><th>Title</th><th>Category</th><th>Priority</th><th>Status</th><th>Updated</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p id="empty" class="empty" hidden></p>
+  </div>
+</main>
+
+<dialog id="formDialog">
+  <form id="form" method="dialog">
+    <h2 id="formTitle"></h2>
+    <label>Title <input name="title" required maxlength="100"></label>
+    <label>Description <textarea name="description" rows="4" required></textarea></label>
+    <div class="row">
+      <label>Category <select name="category"></select></label>
+      <label>Priority <select name="priority"></select></label>
+      <label>Status <select name="status"></select></label>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn" data-close>Cancel</button>
+      <button type="submit" class="btn primary">Save request</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="detailDialog"><div id="detail"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
