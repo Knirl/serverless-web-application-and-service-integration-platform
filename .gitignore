@@ -1,0 +1,15 @@
+# Terraform state and generated files
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+.terraform.tfstate.lock.info
+crash.log
+crash.*.log
+
+# Local Terraform variables (may contain sensitive values)
+terraform.tfvars
+terraform.tfvars.json
+
+# Lambda deployment packages
+*.zip
