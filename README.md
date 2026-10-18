@@ -299,7 +299,7 @@ management without deleting or rebuilding the deployed AWS resources.
 Run a local HTTP server from the frontend directory:
 
 ``` powershell
-cd "C:\Users\Amboy\Desktop\Cloud Career\Advanced Cloud Projects\Project 4\p4-webapp"
+cd to directory of the web app
 python -m http.server 8000
 ```
 
