@@ -16,7 +16,6 @@ static frontend hosting.
 -   [External API Integration](#external-api-integration)
 -   [Security and Monitoring](#security-and-monitoring)
 -   [Testing](#testing)
--   [Known Limitations](#known-limitations)
 -   [Terraform Migration](#terraform-migration)
 -   [Local Development](#local-development)
 -   [Cost Awareness](#cost-awareness)
